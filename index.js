@@ -14,7 +14,6 @@ app.use(express.json());
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster-rental.8xdcsc4.mongodb.net/?retryWrites=true&w=majority`;
 
 
-
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -34,14 +33,6 @@ async function run() {
       res.send(result);
     });
 
-
-
-    // app.get("/adds", async (req, res) => {
-    //   const query = {};
-    //   const adds = postCollection.findOne(query);
-    //   // const adds = await cursor.toArray();
-    //   res.send(adds);
-    // });
   } finally {
     // await client.close();
   }
